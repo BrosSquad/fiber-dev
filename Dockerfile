@@ -7,5 +7,6 @@ ENV PATH="/go/bin:${PATH}"
 RUN apk add make gcc 
 
 RUN go get -u github.com/gofiber/cli/fiber \
-    && wget https://taskfile.dev/install.sh \ 
-    && sh install.sh -b /usr/bin
+    && wget https://taskfile.dev/install.sh \
+    && sh install.sh -b /usr/bin && rm install.sh \
+    && go get github.com/go-delve/delve/cmd/dlv
