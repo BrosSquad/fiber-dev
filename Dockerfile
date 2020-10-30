@@ -2,9 +2,9 @@ FROM golang:1.15-alpine
 
 ENV GOPATH=/go
 ENV GO111MODULE on
-ENV PATH="/go/bin:${PATH}"
+ENV PATH="${GOPATH}/bin:${PATH}"
 
-RUN apk add make gcc 
+RUN apk add make gcc git
 
 RUN go get -u github.com/gofiber/cli/fiber \
     && wget https://taskfile.dev/install.sh \
