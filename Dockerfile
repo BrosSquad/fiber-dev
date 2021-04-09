@@ -1,8 +1,7 @@
-FROM golang:1.15-alpine
+FROM golang:1.16-alpine
 
 ENV GOPATH=/go
 ENV GO111MODULE on
-ENV COMPILE_PATH .
 ENV PATH="${GOPATH}/bin:${PATH}"
 
 RUN apk add make gcc git libc-dev inotify-tools bash
